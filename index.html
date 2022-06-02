@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Development of CSS simulation activity based on the needs assessment of BTVTED students in Rizal Technological University</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description"
+        content="Development of CSS simulation activity based on the needs assessment of BTVTED students in Rizal Technological University" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<!--- ==================== Navigation Bar Start ==================== --->
+	<nav></nav>
+	<!--- ==================== Navigation Bar End ==================== --->
+
+	<!--- ==================== Main Start ==================== --->
+	<main>
+		<div class="center-items">
+			<h1>enter username</h1>
+			<form action="welcome.html">
+				<input type="text" id="username" class="username" autocomplete="off"><br>
+				<div class="btn-div">
+					<input type="submit" name="submit" value="Enter" class="btn-sub" onclick="passVariable();">
+				</div>
+			</form>
+		</div>
+	<div class="soc-box">
+		<p class="soc-title">talk to us:</p>
+		<a href="https://web.facebook.com/researchers9/" class="soc-anchor">facebook.com/researchers9</a><br>
+		<a href="mailto:researchers9@gmail.com" class="soc-anchor">researchers9@gmail.com</a>
+	</div>
+	</main>
+	<!--- ==================== Main End ==================== --->
+
+<script type="text/javascript">
+	function passVariable() {
+		var username = document.getElementById('username').value;
+		localStorage.setItem("textvalue", username);
+		return false;
+	}
+</script>
+</body>
+</html>

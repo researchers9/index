@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Development of CSS simulation activity based on the needs assessment of BTVTED students in Rizal Technological University</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description"
+        content="Development of CSS simulation activity based on the needs assessment of BTVTED students in Rizal Technological University" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<!--- ==================== Navigation Bar Start ==================== --->
+	<nav></nav>
+	<!--- ==================== Navigation Bar End ==================== --->
+
+	<!--- ==================== Main Start ==================== --->
+	<main>
+		<div>
+			<h2>Welcome <span id="result"></span>!</h2>
+			<div class="btn-div-wel">
+				<button class="btn-welcome" onclick="window.location.href = 'practice/index.html';">let's practice!</button>
+			</div><br>
+			<div class="btn-div-wel">
+				<button class="btn-welcome" onclick="window.location.href = 'quiz/index.html';">quiz quicky!</button>
+			</div>
+		</div>
+	<div class="soc-box">
+		<p class="soc-title">talk to us:</p>
+		<a href="" class="soc-anchor">facebook.com/researchers9</a><br>
+		<a href="mailto:researchers9@gmail.com" class="soc-anchor">researchers9@gmail.com</a>
+	</div>
+	</main>
+	<!--- ==================== Main End ==================== --->
+
+
+<script type="text/javascript">
+	document.getElementById('result').innerHTML = localStorage.getItem('textvalue');
+</script>
+</body>
+</html>

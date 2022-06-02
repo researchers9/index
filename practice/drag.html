@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<button id="button">stop / resume</button>
+<div id="timer"></div>
+
+<script type="text/javascript">
+	(async()=>{
+    const timer = document.getElementById('timer');
+
+    let timerId;
+    let tf = false;
+    let k = 7;
+
+    const plusplus = async()=>{
+        timer.innerHTML = k + ' dancing cows left';
+        if(k < 1)clearInterval(timerId);
+        else k--;
+        if (k === -0) {
+        	window.location.href = 'retry-sua.html';
+        }
+    };
+
+    plusplus();
+    timerId = setInterval(plusplus, 1000);
+    document.getElementById('button').addEventListener('click', ()=>{
+        if(!tf)clearInterval(timerId);
+        else timerId = setInterval(plusplus, 1000);
+        tf = !tf;
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Let's Practice - Rizal Technological University</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description"
+        content="Development of CSS simulation activity based on the needs assessment of BTVTED students in Rizal Technological University" />
+    <link rel="stylesheet" type="text/css" href="css/semi-css.css">
+</head>
+<body onload="move('element')">
+	<!--- ==================== Navigation Bar Start ==================== --->
+	<nav></nav>
+	<!--- ==================== Navigation Bar End ==================== --->
+
+	<!--- ==================== Main Start ==================== --->
+	<main>
+		<div class="main-box-div-practice">
+			<p class="practice-title">system unit <span id="dis">dis</span>assembly</p>
+			<p class="time-left">time left: <span id="timer"></span></p>
+
+			<div class="display-element">
+				<div class="container" id="container">
+					<div class="element" style="height: 50px; width: 70px; z-index: 6; background-image: url(img/part5.png);
+					background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
+					<div class="element" style="height: 45px; width: 120px; z-index: 4; background-image: url(img/part3.png);
+					background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
+					<div class="element" style="height: 110px; width: 60px; z-index: 1; background-image: url(img/part7.png);
+					background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
+					<div class="element" style="height: 250px; width: 350px; z-index: 2; background-image: url(img/part1.png);
+					background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
+					<div class="element" style="height: 60px; width: 4px; z-index: 5; background-image: url(img/part4.png);
+					background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
+					<div class="element" style="height: 60px; width: 4px; z-index: 5; background-image: url(img/part4.png);
+					background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
+					<div class="element" style="height: 120px; width: 140px; z-index: 3; background-image: url(img/part2.png);
+					background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
+					<div class="element" style="height: 120px; width: 110px; z-index: 7; background-image: url(img/part6.png);
+					background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
+					<div class="element" style="height: 210px; width: 270px; z-index: 8; background-image: url(img/part8.jpg);
+					background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
+				</div>
+			</div>
+			<button class="btn-start" onclick="oddFunction()" id="button">Disassemble</button><br><br><br><br><br>
+
+			<button class="btn-bck" onclick="window.location.href = 'system-unit-assembly.html';">Back</button>
+		</div>
+	</main>
+	<!--- ==================== Main End ==================== --->
+	<div class="soc-box">
+		<p class="soc-title">talk to us:</p>
+		<a href="https://web.facebook.com/researchers9/" class="soc-anchor">facebook.com/researchers9</a><br>
+		<a href="mailto:researchers9@gmail.com" class="soc-anchor">researchers9@gmail.com</a>
+	</div>
+
+<script type="text/javascript">
+	function oddFunction(){
+		var dis = document.getElementById('dis');
+
+		if (dis.style.display === "inline-flex") {
+			dis.style.display = "inline-flex";
+		}
+		else{
+			dis.style.display = "inline-flex";
+		}
+	}
+</script>
+
+<script type="text/javascript">
+	var chooseElement;
+
+	const move = function(element) {
+		const elements = document.querySelectorAll(".element");
+
+		elements.forEach(element => {
+			element.addEventListener("mousedown", () => {
+				element.style.position = "absolute";
+				chooseElement = element;
+
+				document.onmousemove = (e) => {
+					var x = e.pageX;
+					var y = e.pageY;
+
+					chooseElement.style.left = x -50 + "px";
+					chooseElement.style.top = y -50 + "px";
+
+				}
+			})
+		})
+		document.onmouseup = function(e){
+			chooseElement = null;
+		}
+	}
+</script>
+
+<script>
+(async()=>{
+    const timer = document.getElementById('timer');
+
+    let timerId;
+    let tf = false;
+    let k = 120;
+
+
+    const plusplus = async()=>{
+        timer.innerHTML = k;
+        if(k < 1)clearInterval(timerId);
+        else k--;
+        if (k === -0) {
+        	window.location.href = 'retry-sua.html';
+        }
+    };
+
+    plusplus();
+    timerId = setInterval(plusplus, 1000);
+    document.getElementById('button').addEventListener('click', ()=>{
+        if(!tf)clearInterval(timerId);
+        else timerId = setInterval(plusplus, 1000);
+        tf = !tf;
+    });
+})();
+</script>
+</body>
+</html>
