@@ -134,7 +134,7 @@ let questions = [
   },
     {
     numb: 13,
-    question: "This is a type of screwdriver that is tar-shaped and typically used in vehicles, motorcycles, bicycles, computer systems, hard disk drives and consumer electronics.",
+    question: "This is a type of screwdriver that is star-shaped and typically used in vehicles, motorcycles, bicycles, computer systems, hard disk drives and consumer electronics.",
     answer: "Torx screwdriver",
     options: [
       "Hex Screwdriver",
